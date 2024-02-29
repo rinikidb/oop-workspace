@@ -16,13 +16,16 @@ bool is_ascending(int array[], int n){
             }
         }
         if (answer == "yes"){
+            std::cout << "True" << std::endl;
             return 1;
         }
         else{
+            std::cout << "False" << std::endl;
             return 0;
         }
     }
     else{
+        std::cout << "False" << std::endl;
         return 0;
     }
 }
