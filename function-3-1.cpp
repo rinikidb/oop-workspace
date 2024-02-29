@@ -12,11 +12,12 @@ bool is_fanarray(int array[], int n){
             }
         }
         if (answerasc == 1){
-            for (int i = 0; i < (n-1)/2; i++)
-            if (array[i] == array[4-i]){
-                answerpal = 1;
-            }else{
-                break; 
+            for (int i = 0; i < (n-1)/2; i++){
+                if (array[i] == array[4-i]){
+                    answerpal = 1;
+                }else{
+                    break; 
+                }
             }
         }        
         
