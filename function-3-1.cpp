@@ -39,17 +39,13 @@ bool is_fanarray(int array[], int n){
                 }
             }
         }
-        if (answerasc == 1){
-            if (answerpal ==1){
-                return 1;
-            }
-            else{
-                return 0;
-            }
-        }else{
-            return 0;
-        }
         
+        if (answerpal == 1){
+            return 1;
+        }
+        else{
+            return 0;
+        }  
     }
     else{
         return 0;
