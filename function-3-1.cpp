@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 bool is_fanarray(int array[], int n){
     int answerasc = 0;
@@ -7,7 +6,7 @@ bool is_fanarray(int array[], int n){
     if (n > 0){
         if (n % 2 == 0){
             for (int i = 0; i < n/2; i++){
-                if (array[i] >= array[i+1]){
+                if (array[i] <= array[i+1]){
                     answerasc = 1;
                 }else{
                     break;
@@ -24,7 +23,7 @@ bool is_fanarray(int array[], int n){
         }
         else {
             for (int i = 0; i < (n+1)/2; i++){
-                if (array[i] >= array[i+1]){
+                if (array[i] <= array[i+1]){
                     answerasc = 1;
                 }else{
                     break;
