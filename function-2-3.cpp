@@ -23,9 +23,8 @@ void two_five_nine(int array[], int n){
             }   
                          
         }
-        std::cout << "2:" << sum2 << "\n" << std::endl;
-        std::cout << "5:" << sum5 << "\n" << std::endl;
-        std::cout << "9:" << sum9 << "\n" << std::endl;
+        std::cout << "2:" << sum2 << ";" << "5:" << sum5 << ";" << "9:" << sum9 << ";" << std::endl;
+        
     }
     else if (n < 1){
         std::cout << "Invalid input for n." << std::endl; 
