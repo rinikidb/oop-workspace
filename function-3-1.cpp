@@ -22,7 +22,7 @@ bool is_fanarray(int array[], int n){
             }
         }
         else {
-            for (int i = 0; i < (n+1)/2; i++){
+            for (int i = 0; i < ((n+1)/2 - 1); i++){
                 if (array[i] <= array[i+1]){
                     answerasc = 1;
                 }else{
@@ -30,7 +30,7 @@ bool is_fanarray(int array[], int n){
                 }
             }
             if (answerasc == 1){
-                for (int i = 0; i < (n+1)/2; i++)
+                for (int i = 0; i < ((n+1)/2 -1); i++)
                 if (array[i] == array[4-i]){
                     answerpal = 1;
                 }else{
