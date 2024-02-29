@@ -2,25 +2,22 @@
 #include <string>
 
 bool is_ascending(int array[], int n){
-    std::string answer = "yes";
+    int answer = 0;
     if (n > 0){
         for (int i = 0; i < n; i++){
             if (array[i] <= array[i+1]){
-                answer = "yes";
-            }
-            else{
-                answer = "no";
-            }
-            if (answer == "no"){
+                answer = 1;
+            }else{
                 break;
             }
         }
-        if (answer == "yes"){
+        if (answer == 1){
             return 1;
-        }
-        else{
+        }else{
             return 0;
         }
     }
-    return 0;
+    else{
+        return 0;
+    }
 } 
