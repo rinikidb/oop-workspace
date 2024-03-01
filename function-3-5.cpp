@@ -8,9 +8,10 @@ double sum_even(double array[], int n){
                 sum += array[i];
             }
         }
+        std::cout << sum << std::endl;
         return sum;
     }
-    else{
+    else {
         return 0;
     }
 }
