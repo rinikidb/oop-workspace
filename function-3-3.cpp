@@ -13,7 +13,7 @@ double weighted_average(int array[], int n){
             sum += (array[i]*count);
         }
         int avg = sum/n;
-        return sum;
+        return avg;
     }
     else {
         return 0;
