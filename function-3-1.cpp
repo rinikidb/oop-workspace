@@ -45,7 +45,7 @@ bool is_fanarray(int array[], int n){
             }        
         }
         
-        if (answerpal == 1){
+        if (answerasc == 1){
             return 1;
         }else{
             return 0;
