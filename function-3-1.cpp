@@ -9,6 +9,7 @@ bool is_fanarray(int array[], int n){
                 if (array[i] <= array[i+1]){
                     answerasc = 1;
                 }else{
+                    answerasc = 0;
                     break;
                 }
             }
@@ -17,6 +18,7 @@ bool is_fanarray(int array[], int n){
                     if (array[i] == array[4-i]){
                         answerpal = 1;
                     }else{
+                        answerpal = 0;
                         break; 
                     }
                 }
@@ -27,6 +29,7 @@ bool is_fanarray(int array[], int n){
                 if (array[i] <= array[i+1]){
                     answerasc = 1;
                 }else{
+                    answerasc = 0;
                     break;
                 }
             }
@@ -35,6 +38,7 @@ bool is_fanarray(int array[], int n){
                     if (array[i] == array[4-i]){
                         answerpal = 1;
                     }else{
+                        answerpal = 0; 
                         break; 
                     }
                 }
@@ -42,9 +46,12 @@ bool is_fanarray(int array[], int n){
         }
         
         if (answerpal == 1){
-            std::cout << "The given array is not a palindrome." << std::endl;
+            std::cout << "The given array is a palindrome." << std::endl;
+            return 1;
+        }else{
+            return 0;
         }
-        return 1;
+        
     }
     else {
         return 0;
