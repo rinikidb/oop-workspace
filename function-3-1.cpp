@@ -1,9 +1,9 @@
 #include <iostream>
 
 bool is_fanarray(int array[], int n){
-    int answerasc = 0;
-    int answerpal = 0;
     if (n > 1){
+        int answerasc = 0;
+        int answerpal = 0;
         if (n % 2 == 0){
             for (int i = 0; i < n/2; i++){
                 if (array[i] <= array[i+1]){
