@@ -42,10 +42,9 @@ bool is_fanarray(int array[], int n){
         }
         
         if (answerpal == 1){
-            return 1;
-        }else{
-            return 0;
+            std::cout << "The given array is not a palindrome." << std::endl;
         }
+        return 1;
     }
     else {
         return 0;
