@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-int main(){
-    int x = 789;
+void print_binary_str(std::string decimal_number){
+    int x = stoi(decimal_number);
     std::string binary = "";
     while ( x >= 2){
         int remainder = x % 2;
