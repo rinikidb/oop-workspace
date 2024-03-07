@@ -9,7 +9,6 @@ int is_identity(int array[10][10]){
                         answer = 1;
                     }else{
                         answer = 0;
-                        break;
                     }
                 }
                 else{
@@ -17,7 +16,6 @@ int is_identity(int array[10][10]){
                         answer = 1;
                     }else{
                         answer = 0;
-                        break;
                     }
                 }
             }
