@@ -11,6 +11,7 @@ int is_identity(int array[10][10]){
                         answer = 0;
                     }
                 }
+                /*
                 else{
                     if (array[i][j] == 0){
                         answer = 1;
@@ -18,9 +19,10 @@ int is_identity(int array[10][10]){
                         answer = 0;
                     }
                 }
+                */
             }
-        }
-    /*
+    }
+    
     if (answer == 1){
         for (int i = 0; i < 10; i++){
             for (int j = 0; j < 10; j++){
@@ -29,16 +31,16 @@ int is_identity(int array[10][10]){
                         answer = 1;
                     }else{
                         answer = 0;
-                        break;
                     }
                 }
             }
-        }    
+        }
+        
     }
-    */
     if (answer == 1){
-        return 1;
-    }else{
+        return 1; 
+    }  
+    else{
         return 0;
     }
-}
+}   
