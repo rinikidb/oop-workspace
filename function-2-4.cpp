@@ -2,14 +2,14 @@
 using namespace std;
 
 int array_min(int integers[], int length){
-    int min = integers[0];
     if (length < 1){
         return -1;  
     }
     else{
+        int min = integers[0];
         for (int i = 0; i < length; i++){
                 if (integers[i] < min){
-                    min = integers[0];
+                    min = integers[i];
                 }
         }
         return min;    
@@ -17,14 +17,14 @@ int array_min(int integers[], int length){
 }
 
 int array_max(int integers[], int length){
-    int max = integers[0];
     if (length < 1){
         return -1;
     }
     else{
+        int max = integers[0];
         for (int i = 0; i < length; i++){
                 if (integers[i] > max){
-                    max = integers[0];
+                    max = integers[i];
                 }
         }
         return max;
