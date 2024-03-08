@@ -31,17 +31,14 @@ int sum_array_elements(int integers[], int length){
     return sum;
 } 
 int sum_if_palindrome(int integers[], int length){
-    
+    if (length <= 0){
+        return -1;
+    }
     if (!is_palindrome(integers, length)){
         return -2;
     }
     else{
-        sum_array_elements(integers, length);
+        return sum_array_elements(integers, length);
     }
-    if (length <= 0){
-        return -1;
-    }
-    else{
-        return 0;
-    }  
+    
 }
