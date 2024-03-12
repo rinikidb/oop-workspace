@@ -27,7 +27,7 @@ int main(){
     //create dynamic array
     double* dyn_arr = dynamicArray(size, arr_val);
     //max of dynamic array but it will be same because all values are same
-    cout << "Max valus of dunamic array is: " << arrayMax(dyn_arr, size) << endl;
+    cout << "Max values of dynamic array is: " << arrayMax(dyn_arr, size) << endl;
 
     delete[] dyn_arr;
 }
