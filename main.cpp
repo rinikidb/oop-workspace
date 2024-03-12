@@ -5,7 +5,11 @@ using namespace std;
 int main(){
     double a = 56;
     double* address = &a;
+    //print old value
+    cout << a << endl;
     changeValue(address);
+    //print new value
+    cout << a << endl;
 
     double array[] = {1.0,2.0,3.0,4.0,5.0};
     //int size = sizeof(array)/sizeof(array[0]);
