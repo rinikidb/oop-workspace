@@ -1,4 +1,4 @@
-extern void changeValue(double*);
-extern void printArray(double*, int);
-extern double arrayMax(double*, int);
-extern double* dynamicArray(int, double);
+void changeValue(double*);
+void printArray(double*, int);
+double arrayMax(double*, int);
+double* dynamicArray(int, double);
