@@ -1,4 +1,5 @@
 #include <iostream>
+#include "workshop.h"
 using namespace std;
 
 extern void changeValue(double* x);
