@@ -3,7 +3,6 @@ using namespace std;
  
 void changeValue(double* x){
     *x = 42;
-    cout << *x << endl;
 }
 
 void printArray(double* a, int n){
