@@ -8,9 +8,9 @@ extern double arrayMax(double* a, int n);
 extern double* dynamicArray(int n, double m);
 
 int main(){
-    /*double a = 56;
+    double a = 56;
     double* address = &a;
-    changeValue(address);*/
+    changeValue(address);
 
     double array[] = {1.0,2.0,3.0,4.0,5.0};
     //int size = sizeof(array)/sizeof(array[0]);
