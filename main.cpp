@@ -2,10 +2,10 @@
 #include "workshop.h"
 using namespace std;
 
-extern void changeValue(double* x);
-extern void printArray(double* a, int n);
-extern double arrayMax(double* a, int n);
-extern double* dynamicArray(int n, double m);
+extern void changeValue(double*);
+extern void printArray(double*, int);
+extern double arrayMax(double*, int);
+extern double* dynamicArray(int, double);
 
 int main(){
     double a = 56;
