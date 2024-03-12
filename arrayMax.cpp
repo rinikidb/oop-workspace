@@ -1,4 +1,5 @@
 #include <iostream>
+#include "workshop.h"
 using namespace std;
  
 double arrayMax(double* a, int n){
