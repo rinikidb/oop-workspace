@@ -7,4 +7,5 @@ double* duplicateArray(double* array, int size){
         dyn_array[i] = *(array + i);
     }
     return dyn_array;
+    delete[] dyn_array;
 }
