@@ -4,7 +4,6 @@ using namespace std;
 int *readNumbers(){
     int *array = new int[10];
     for (int i = 0; i < 10; i++){
-        cout << "Enter an integer: ";
         cin >> array[i];
     }
     return array;
