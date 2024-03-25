@@ -22,7 +22,7 @@ int Orchestra::get_current_number_of_members(){
 // returns true if any musician in the orchestra plays the specified instrument
 // otherwise returns false
 bool Orchestra::has_instrument(std::string instrument){
-    int answer = 0;
+    int answer;
     for (int i = 0; i < orch_size; i++){
         if (members[i].get_instrument() == instrument){
             answer = 1;
