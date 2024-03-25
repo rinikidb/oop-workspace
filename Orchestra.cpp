@@ -16,19 +16,27 @@ Orchestra::Orchestra(int size){
 
 // returns the number of musicians who have joined the orchestra
 int Orchestra::get_current_number_of_members(){
-    current_size = sizeof(*members);
     return current_size;
 }
 
 // returns true if any musician in the orchestra plays the specified instrument
 // otherwise returns false
 bool Orchestra::has_instrument(std::string instrument){
+    int answer = 0;
     for (int i = 0; i < orch_size; i++){
         if (members[i].get_instrument() == instrument){
-            return true;
+            answer = 1;
+        }
+        else{
+            answer = 0;
         }
     }
-    return false;
+    if (answer == 1){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 // returns the array of members of the orchestra
