@@ -16,6 +16,7 @@ Orchestra::Orchestra(int size){
 
 // returns the number of musicians who have joined the orchestra
 int Orchestra::get_current_number_of_members(){
+    current_size = sizeof(*members);
     return current_size;
 }
 
