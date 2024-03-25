@@ -49,7 +49,7 @@ Musician* Orchestra::get_members(){
 // otherwise returns false
 bool Orchestra::add_musician(Musician new_musician){
     if (current_size < orch_size) {
-        members[current_size + 1] = new_musician;
+        members[current_size++] = new_musician;
         return true;
     } else {
         return false;
