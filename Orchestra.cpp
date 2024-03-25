@@ -11,7 +11,7 @@ Orchestra::Orchestra(){
 // constructor for an orchestra of given size
 Orchestra::Orchestra(int size){
     orch_size = size;
-    members = new Musician[size];
+    members = new Musician[orch_size];
 }
 
 // returns the number of musicians who have joined the orchestra
