@@ -1,34 +1,11 @@
 #include "Orchestra.h"
 #include "Musician.h"
 
-//
-Musician::Musician(){
-    instrument = "null";
-    experience = 0;
-}
-
-Musician::Musician(std::string instrument, int experience){
-    this->instrument = instrument;
-    this->experience = experience;
-}
-
-std::string Musician::get_instrument(){
-    return instrument;
-}
-
-int Musician::get_experience(){
-    return experience;
-}
-
 // default constructor
 Orchestra::Orchestra(){
     orch_size = 0;
     current_size = 0;
     members = nullptr;
-}
-
-Orchestra::~Orchestra(){
-    delete[] members;
 }
 
 // constructor for an orchestra of given size
@@ -69,6 +46,9 @@ bool Orchestra::add_musician(Musician new_musician){
     }
 }
 
+Orchestra::~Orchestra(){
+    delete[] members;
+}
 
 
 
