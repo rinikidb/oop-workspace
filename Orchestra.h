@@ -13,6 +13,7 @@ private:
 public:
     Orchestra();           // default constructor
     Orchestra(int size);   // constructor for an orchestra of given size
+    ~Orchestra();
 
     // returns the number of musicians who have joined the orchestra
     int get_current_number_of_members(); 
@@ -27,7 +28,7 @@ public:
     // otherwise returns false
     bool add_musician(Musician new_musician);
 
-    ~Orchestra();
+    
 };
 
 #endif

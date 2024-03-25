@@ -11,7 +11,12 @@ Orchestra::Orchestra(){
 // constructor for an orchestra of given size
 Orchestra::Orchestra(int size){
     orch_size = size;
+    current_size = 0;
     members = new Musician[orch_size];
+}
+
+Orchestra::~Orchestra(){
+    delete[] members;
 }
 
 // returns the number of musicians who have joined the orchestra
@@ -24,7 +29,7 @@ int Orchestra::get_current_number_of_members(){
 // otherwise returns false
 bool Orchestra::has_instrument(std::string instrument){
     int answer = 0;
-    for (int i = 0; i < orch_size; i++){
+    for (int i = 0; i < current_size; i++){
         if (members[i].get_instrument() == instrument){
             answer = 1;
             break;
@@ -54,9 +59,6 @@ bool Orchestra::add_musician(Musician new_musician){
     }
 }
 
-Orchestra::~Orchestra(){
-    delete[] members;
-}
 
 
 
