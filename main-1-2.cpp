@@ -7,8 +7,8 @@ using namespace std;
 
 int main(){
 
-    //Bike_yard list1;
-    //cout << "Default capacity: " << list1.get_Total_Stock_Count() << endl;
+    Bike_yard list1;
+    cout << "Default capacity: " << list1.get_Total_Stock_Count() << endl;
 
     Bike b1("Honda", 21);
     Bike b2("B-twin", 22);
