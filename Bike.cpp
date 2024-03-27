@@ -14,11 +14,11 @@ Bike::Bike(string brand, int code){
     this->code = code;
 }
 
-string Bike::get_brand(){
+string Bike::getBrand(){
     return brand;
 }
 
-int Bike::get_code(){
+int Bike::getCode(){
     return code;
 }
 

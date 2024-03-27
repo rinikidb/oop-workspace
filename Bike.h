@@ -15,9 +15,9 @@ class Bike{
         
         Bike(string brand, int code);
 
-        string get_brand();
+        string getBrand();
 
-        int get_code();
+        int getCode();
 
         ~Bike();
 };
