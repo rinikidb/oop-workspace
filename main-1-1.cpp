@@ -8,13 +8,13 @@ int main(){
 
     Bike b1;
 
-    cout << "Default brand name: " << b1.get_brand() << endl;
-    cout << "Default brand code: " << b1.get_code() << endl;
+    cout << "Default brand name: " << b1.getBrand() << endl;
+    cout << "Default brand code: " << b1.getCode() << endl;
 
     Bike b2("Hercules", 25);
 
-    cout << "Stored brand name: " << b2.get_brand() << endl;
-    cout << "Stored brand code: " << b2.get_code() << endl;
+    cout << "Stored brand name: " << b2.getBrand() << endl;
+    cout << "Stored brand code: " << b2.getCode() << endl;
 
     return 0;
 }
