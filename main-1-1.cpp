@@ -1,6 +1,7 @@
 #include <iostream>
 #include "player.h"
-
+#include "wizard.h" 
+#include "warrior.h"
 
 
 int main() {
