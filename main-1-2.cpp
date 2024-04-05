@@ -50,8 +50,6 @@ int main() {
     std::cout << "Enter the ID of the vehicle to unpark: ";
     std::cin >> idToUnpark;
     parkingLot.unparkVehicle(idToUnpark);
-
-
     
     //std::cout << "Attempting to unpark a vehicle that is not in the lot..." << std::endl;
     //parkingLot.unparkVehicle(100);

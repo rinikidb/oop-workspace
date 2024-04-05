@@ -23,30 +23,20 @@ int ParkingLot::getCount() const {
 
 void ParkingLot::parkVehicle(Vehicle* vehicle) {
   if (count < capacity) {
-        vehicles[count++] = vehicle;
-    } else  {
+      vehicles[count++] = vehicle;
+  }else{
         std::cout << "The lot is full" << std::endl;
-    }
+  }
 }
 
 void ParkingLot::unparkVehicle(int ID) {
-   bool found = false;
-     for (int i = 0; i < count; i++) {
-        if (vehicles[i]->getID() == ID) {
-             delete vehicles[i];
-             for (int j = i; j < count - 1; ++j) {
-                vehicles[j] = vehicles[j + 1];
-            }
-            
-            count--;
-            found = true;
-            //std::cout << "Vehicle with ID " << vehicleID << " has been unparked." << std::endl;
-            
-            break;
-        }
+   for (int i = 0; i < capacity; ++i) {
+      if (vehicles[i] != nullptr && vehicles[i]->getID() == ID) {
+        delete vehicles[i];
+        vehicles[i] = nullptr;
+        count--;
+      }
     }
-    
-    if (!found) {
-        std::cout << "Vehicle not in the lot" << std::endl;
-    }
+
+  std::cout << "Vehicle not in the lot.\n";
 }
