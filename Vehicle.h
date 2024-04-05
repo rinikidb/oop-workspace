@@ -13,10 +13,10 @@ class Vehicle{
 
     public:
         Vehicle(int ID);
-        int getID();
+        int getID() const;
         virtual ~Vehicle(){};
         time_t getTimeOfEntry() const;
-        int getParkingDuration();
+        
 };
 
 #endif 

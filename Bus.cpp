@@ -4,16 +4,16 @@
 
 using namespace std;
 
-int Bus::getParkingDuration(){
-            currentTime = time(nullptr);
-            duration = currentTime - timeOfEntry;
-            //after reduction
-            duration = duration - (0.1*duration);
-            return duration;
+int Bus::getParkingDuration() const {
+        time_t currentTime = time(nullptr);
+        int duration = currentTime - timeOfEntry;
+        //after reduction
+        duration = duration - (0.1*duration);
+        return static_cast<int>(duration);
             
             /*
             time_t currentTime = time(nullptr);
             int duration = difftime(currentTime, timeOfEntry);
             return duration * 0.9;
             */
-        }
+}

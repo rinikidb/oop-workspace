@@ -9,12 +9,9 @@
 using namespace std;
 
 class Motorbike : public Vehicle{
-    private:
-        time_t currentTime;
-        int duration;
     public:
         Motorbike(int ID) : Vehicle(ID) {}
-        int getParkingDuration();
+        int getParkingDuration() const;
         
 };
 
