@@ -17,17 +17,19 @@ ParkingLot::~ParkingLot() {
   delete[] vehicles;
 }
 
-bool ParkingLot::parkVehicle(Vehicle* vehicle) {
+int ParkingLot::getCount() const {
+    return count;
+}
+
+void ParkingLot::parkVehicle(Vehicle* vehicle) {
   if (count < capacity) {
         vehicles[count++] = vehicle;
     } else  {
         std::cout << "The lot is full" << std::endl;
     }
-
-  return false;
 }
 
-bool ParkingLot::unparkVehicle(int ID) {
+void ParkingLot::unparkVehicle(int ID) {
    bool found = false;
      for (int i = 0; i < count; i++) {
         if (vehicles[i]->getID() == ID) {
@@ -47,6 +49,4 @@ bool ParkingLot::unparkVehicle(int ID) {
     if (!found) {
         std::cout << "Vehicle not in the lot" << std::endl;
     }
-
-    return found;
 }

@@ -12,9 +12,38 @@ private:
 public:
   ParkingLot(int capacity);
   ~ParkingLot();
-  int getCount() const { return count; }
-  bool parkVehicle(Vehicle* vehicle);
-  bool unparkVehicle(int ID);
+  int getCount() const;
+  void parkVehicle(Vehicle* vehicle);
+  void unparkVehicle(int ID);
 };
+
+/*
+#ifndef PARKINGLOT_H
+
+#define PARKINGLOT_H
+
+#include "Vehicle.h"
+
+class ParkingLot {
+ public:
+
+    ParkingLot(int capacity);
+    ~ParkingLot();
+
+    int getCount() const;
+
+    void parkVehicle(Vehicle* vehicle);
+    void unparkVehicle(int ID);
+
+    //int countOverstayingVehicles(int maxParkingDuration) const;
+
+private:
+
+    Vehicle** vehicles;
+
+    int capacity;
+    int count;
+};
+*/
 
 #endif
