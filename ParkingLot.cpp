@@ -32,11 +32,11 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
 void ParkingLot::unparkVehicle(int ID) {
   int answer = 0;
   for (int i = 0; i < capacity; ++i) {
-    if (vehicles[i] != nullptr && vehicles[i]->getID() == ID) {
+    if (vehicles[i]->getID() == ID) {
+      answer = 1;
       delete vehicles[i];
       vehicles[i] = nullptr;
       count--;
-      answer = 1;
       break;
     }
   }
