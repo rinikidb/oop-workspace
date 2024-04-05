@@ -37,6 +37,7 @@ void ParkingLot::unparkVehicle(int ID) {
       vehicles[i] = nullptr;
       count--;
       answer = 1;
+      break;
     }
   }
 
