@@ -9,7 +9,7 @@ int Car::getParkingDuration() const {
         int duration = currentTime - timeOfEntry;
         //after reduction
         duration = duration - (0.1*duration);
-        return duration;
+        return static_cast<int>(duration);
             
             /*
             time_t currentTime = time(nullptr);
