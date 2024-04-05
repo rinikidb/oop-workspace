@@ -43,7 +43,7 @@ void ParkingLot::unparkVehicle(int ID) {
   }
 
   if(answer == 1){
-    std::cout << "Vehicle not in the lot" << endl;
+    std::cout << "Vehicle"  << " not in the lot" << std::endl;
   }
   else{
     std::cout << endl;
