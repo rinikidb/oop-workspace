@@ -16,6 +16,7 @@ class Vehicle{
         int getID() const;
         virtual ~Vehicle(){};
         time_t getTimeOfEntry() const;
+        virtual int getParkingDuration() const = 0;
         
 };
 
