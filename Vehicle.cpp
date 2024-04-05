@@ -9,7 +9,7 @@ Vehicle::Vehicle(int ID){
     timeOfEntry = time(NULL);
 }
 
-int Vehicle::getID(){
+int Vehicle::getID() const {
         return ID;
     }
 
