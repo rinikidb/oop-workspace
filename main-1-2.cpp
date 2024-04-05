@@ -53,8 +53,8 @@ int main() {
 
 
     
-    std::cout << "Attempting to unpark a vehicle that is not in the lot..." << std::endl;
-    parkingLot.unparkVehicle(100);
+    //std::cout << "Attempting to unpark a vehicle that is not in the lot..." << std::endl;
+    //parkingLot.unparkVehicle(100);
     
 
     return 0;
