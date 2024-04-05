@@ -1,46 +1,54 @@
 #include <iostream>
-#include <string>
+#include <vector>
 #include "Vehicle.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
 
-using namespace std;
+int main() {
+    int numCars, numBuses, numMotorbikes;
+    std::cout << "Enter the number of cars: ";
+    std::cin >> numCars;
+    std::cout << "Enter the number of buses: ";
+    std::cin >> numBuses;
+    std::cout << "Enter the number of motorbikes: ";
+    std::cin >> numMotorbikes;
 
-int main(){
+    // Vector to hold pointers to Vehicle objects
+    std::vector<Vehicle*> vehicles;
 
-    int numCars;
-    int numBuses;
-    int numMotorbikes;
-
-    cout << "Enter the number of cars you want to enter: " <<endl;
-    cin >> numCars;
-    cout << "Enter the number of buses you want to enter: " <<endl;
-    cin >> numBuses;
-    cout << "Enter the number of motorbikes you want to enter: " <<endl;
-    cin >> numMotorbikes;
-
-    int total = numCars + numBuses + numMotorbikes; 
-
-    Vehicle* array[total];
-    
-    // Create Car, Bus, and Motorbike objects based on user input
-    for (int i = 0; i < numCars; ++i){
-        vehicles[i] = new Car(i + 1);
-    }
-    for (int i = numCars; i < numCars + numBuses; ++i){
-        vehicles[i] = new Bus(i + 1);
-    }
-    for (int i = numCars + numBuses; i < numCars + numBuses + numMotorbikes; ++i){
-        vehicles[i] = new Motorbike(i + 1);
+    // Creating Car objects and adding pointers to them in the vector
+    for (int i = 0; i < numCars; ++i) {
+        vehicles.push_back(new Car(i + 1));
     }
 
-
-    for (int i = 0; i < total; i++) {
-        cout << "Vehicle ID " << vehicles[i]->getID() << " parking duration: " << vehicles[i]->getParkingDuration() << " seconds\n" << endl;
-  
+    // Creating Bus objects and adding pointers to them in the vector
+    for (int i = 0; i < numBuses; ++i) {
+        vehicles.push_back(new Bus(i + 1));
     }
 
-    // Deallocate memory
-    for (int i = 0; i < numCars + numBuses + numMotorbikes; ++i){
-        delete vehicles[i];
+    // Creating Motorbike objects and adding pointers to them in the vector
+    for (int i = 0; i < numMotorbikes; ++i) {
+        vehicles.push_back(new Motorbike(i + 1));
+    }
+
+    // Printing parking durations for each vehicle
+    for (auto vehicle : vehicles) {
+        std::cout << "Vehicle " << vehicle->getID() << " parking duration: ";
+        // Check if the vehicle is a Car, Bus, or Motorbike to call the correct method
+        if (Car* car = dynamic_cast<Car*>(vehicle)) {
+            std::cout << car->getParkingDuration();
+        } else if (Bus* bus = dynamic_cast<Bus*>(vehicle)) {
+            std::cout << bus->getParkingDuration();
+        } else if (Motorbike* motorbike = dynamic_cast<Motorbike*>(vehicle)) {
+            std::cout << motorbike->getParkingDuration();
+        }
+        std::cout << " seconds" << std::endl;
+    }
+
+    // Freeing memory allocated for vehicles
+    for (auto vehicle : vehicles) {
+        delete vehicle;
     }
 
     return 0;

@@ -14,32 +14,7 @@ class Vehicle{
     public:
         Vehicle(int ID);
         int getID();
-};
-
-class Car : public Vehicle{
-    private:
-        time_t currentTime;
-        int duration;
-    public:
-        int getParkingDuration();
-        
-};
-
-class Bus : public Vehicle{
-    private:
-        time_t currentTime;
-        int duration;
-    public:
-        int getParkingDuration();
-};
-
-class Motorbike : public Vehicle{
-    private:
-        time_t currentTime;
-        int duration;
-    public:
-        int getParkingDuration();
-        
+        virtual ~Vehicle(){};
 };
 
 #endif 
