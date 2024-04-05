@@ -1,6 +1,8 @@
 #include "ParkingLot.h"
 #include <iostream>
 
+using namespace std;
+
 ParkingLot::ParkingLot(int capacity) : capacity(capacity), count(0) {
   vehicles = new Vehicle*[capacity];
   for (int i = 0; i < capacity; i++) {
@@ -26,15 +28,25 @@ bool ParkingLot::parkVehicle(Vehicle* vehicle) {
 }
 
 bool ParkingLot::unparkVehicle(int ID) {
-   for (int i = 0; i < capacity; i++) {
-    if (vehicles[i] != nullptr && vehicles[i]->getID() == ID) {
-      delete vehicles[i];
-      vehicles[i] = nullptr;
-      count--;
-      return true;
+   bool found = false;
+     for (int i = 0; i < count; i++) {
+        if (vehicles[i]->getID() == ID) {
+             delete vehicles[i];
+             for (int j = i; j < count - 1; ++j) {
+                vehicles[j] = vehicles[j + 1];
+            }
+            
+            count--;
+            found = true;
+            //std::cout << "Vehicle with ID " << vehicleID << " has been unparked." << std::endl;
+            
+            break;
+        }
     }
-  }
+    
+    if (!found) {
+        std::cout << "Vehicle not in the lot" << std::endl;
+    }
 
-  std::cout << "Vehicle not in the lot.\n";
-  return false;
+    return found;
 }
