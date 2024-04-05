@@ -6,45 +6,56 @@
 #include "ParkingLot.h"
 
 int main() {
-  // Create a ParkingLot object with a capacity of 10
-  ParkingLot parkingLot(10);
+    ParkingLot parkingLot(3); 
+    
 
-  int choice;
-  int ID;
-
-  do {
-    std::cout << "\nParking Lot Menu:\n";
-    std::cout << "1. Park a vehicle\n";
-    std::cout << "2. Unpark a vehicle\n";
-    std::cout << "3. Exit\n";
-    std::cout << "Enter your choice: ";
-    std::cin >> choice;
-
-    switch (choice) {
-      case 1:
-        std::cout << "\nEnter vehicle type (1 - Car, 2 - Bus, 3 - Motorbike): ";
+    int choice = 0;
+    
+    while (true) {
+        
+        std::cout << "Enter the type of vehicle to park (1. Car, 2. Bus, 3. Motorbike, 0. Exit): ";
         std::cin >> choice;
-        if (choice == 1) {
-          parkingLot.parkVehicle(new Car((parkingLot.getCount()+1)));
-        } else if (choice == 2) {
-          parkingLot.parkVehicle(new Bus((parkingLot.getCount()+1)));
-        } else if (choice == 3) {
-          parkingLot.parkVehicle(new Motorbike((parkingLot.getCount()+1)));
-        } else {
-          std::cout << "Invalid choice.\n";
+        
+        if (choice == 0) {
+            break;
         }
-        break;
-      case 2:
-        std::cout << "Enter the ID of the vehicle to unpark: ";
-        std::cin >> ID;
-        parkingLot.unparkVehicle(ID);
-        break;
-      case 3:
-        break;
-      default:
-        std::cout << "Invalid choice.\n";
-    }
-  } while (choice != 3);
 
-  return 0;
+        
+        int id;
+        
+        std::cout << "Enter the ID of the vehicle: ";
+        std::cin >> id;
+        Vehicle* vehicle = nullptr;
+        if (choice == 1) {
+            vehicle = new Car(id);
+        } else if (choice == 2) {
+            vehicle = new Bus(id);
+        } else if (choice == 3) {
+            vehicle = new Motorbike(id);
+        }
+        if (vehicle) {
+            parkingLot.parkVehicle(vehicle);
+        }
+    }
+
+
+    
+    Car* extraCar = new Car(4);
+    parkingLot.parkVehicle(extraCar);
+
+   
+
+    int idToUnpark;
+    
+    std::cout << "Enter the ID of the vehicle to unpark: ";
+    std::cin >> idToUnpark;
+    parkingLot.unparkVehicle(idToUnpark);
+
+
+    
+    std::cout << "Attempting to unpark a vehicle that is not in the lot..." << std::endl;
+    parkingLot.unparkVehicle(100);
+    
+
+    return 0;
 }
