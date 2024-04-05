@@ -5,37 +5,39 @@
 #include "Bus.h"
 #include "Motorbike.h"
 
+using namespace std;
+
 int main() {
     int numCars, numBuses, numMotorbikes;
-    std::cout << "Enter the number of cars: ";
-    std::cin >> numCars;
-    std::cout << "Enter the number of buses: ";
-    std::cin >> numBuses;
-    std::cout << "Enter the number of motorbikes: ";
-    std::cin >> numMotorbikes;
+    cout << "Enter the number of cars: ";
+    cin >> numCars;
+    cout << "Enter the number of buses: ";
+    cin >> numBuses;
+    cout << "Enter the number of motorbikes: ";
+    cin >> numMotorbikes;
 
-    // Vector to hold pointers to Vehicle objects
-    std::vector<Vehicle*> vehicles;
+    //Vector to hold pointers to Vehicle objects
+    vector<Vehicle*> array;
 
-    // Creating Car objects and adding pointers to them in the vector
+    //Creating Car objects 
     for (int i = 0; i < numCars; ++i) {
-        vehicles.push_back(new Car(i + 1));
+        array.push_back(new Car(i + 1));
     }
 
-    // Creating Bus objects and adding pointers to them in the vector
+    //Creating Bus objects 
     for (int i = 0; i < numBuses; ++i) {
-        vehicles.push_back(new Bus(i + 1));
+        array.push_back(new Bus(i + 1));
     }
 
-    // Creating Motorbike objects and adding pointers to them in the vector
+    //Creating Motorbike objects 
     for (int i = 0; i < numMotorbikes; ++i) {
-        vehicles.push_back(new Motorbike(i + 1));
+        array.push_back(new Motorbike(i + 1));
     }
 
-    // Printing parking durations for each vehicle
-    for (auto vehicle : vehicles) {
+    //Printing it out
+    for (auto vehicle : array) {
         std::cout << "Vehicle " << vehicle->getID() << " parking duration: ";
-        // Check if the vehicle is a Car, Bus, or Motorbike to call the correct method
+        //Checking the type of vehicle
         if (Car* car = dynamic_cast<Car*>(vehicle)) {
             std::cout << car->getParkingDuration();
         } else if (Bus* bus = dynamic_cast<Bus*>(vehicle)) {
@@ -46,8 +48,8 @@ int main() {
         std::cout << " seconds" << std::endl;
     }
 
-    // Freeing memory allocated for vehicles
-    for (auto vehicle : vehicles) {
+    //Deallocation of memory
+    for (auto vehicle : array) {
         delete vehicle;
     }
 
