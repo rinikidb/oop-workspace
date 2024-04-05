@@ -20,10 +20,28 @@ int main(){
     int total = numCars + numBuses + numMotorbikes; 
 
     Vehicle* array[total];
-    for (int i = 0; i < total; i++){
-        array[i] = new Vehicle(i);
+    
+    // Create Car, Bus, and Motorbike objects based on user input
+    for (int i = 0; i < numCars; ++i){
+        vehicles[i] = new Car(i + 1);
+    }
+    for (int i = numCars; i < numCars + numBuses; ++i){
+        vehicles[i] = new Bus(i + 1);
+    }
+    for (int i = numCars + numBuses; i < numCars + numBuses + numMotorbikes; ++i){
+        vehicles[i] = new Motorbike(i + 1);
     }
 
+
+    for (int i = 0; i < total; i++) {
+        cout << "Vehicle ID " << vehicles[i]->getID() << " parking duration: " << vehicles[i]->getParkingDuration() << " seconds\n" << endl;
+  
+    }
+
+    // Deallocate memory
+    for (int i = 0; i < numCars + numBuses + numMotorbikes; ++i){
+        delete vehicles[i];
+    }
 
     return 0;
 }
