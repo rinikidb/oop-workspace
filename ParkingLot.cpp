@@ -53,14 +53,14 @@ void ParkingLot::unparkVehicle(int ID) {
 int ParkingLot::countOverstayingVehicles(int maxDuration) const {
   
   time_t currentTime = time(nullptr);
-  int count = 0;
-  for (int i = 0; i < count; ++i) {
+  int overStayingCount = 0;
+  for (int i = 0; i < count; i++) {
     if (difftime(currentTime, vehicles[i]->getTimeOfEntry()) > maxDuration){
-      count = count + 1;
+      overStayingCount++;
     }
   }
       
-  return count;
+  return overStayingCount;
 }
 
 
