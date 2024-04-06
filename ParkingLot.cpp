@@ -43,7 +43,7 @@ void ParkingLot::unparkVehicle(int ID) {
   }
 
   if(answer == 1){
-    std::cout << "Vehicle"  << " not in the lot" << std::endl;
+    std::cout << "Vehicle" << " not in the lot" << std::endl;
   }
   else{
     std::cout << endl;
@@ -51,14 +51,12 @@ void ParkingLot::unparkVehicle(int ID) {
 }
 
 int ParkingLot::countOverstayingVehicles(int maxDuration) const {
-   
-  int count = 0;
-      
+  
   time_t currentTime = time(nullptr);
-      
+  int count = 0;
   for (int i = 0; i < count; ++i) {
     if (difftime(currentTime, vehicles[i]->getTimeOfEntry()) > maxDuration){
-      count++;
+      count = count + 1;
     }
   }
       

@@ -19,7 +19,6 @@ int main() {
         if (choice == 0) {
             break;
         }
-
         
         int id;
         
