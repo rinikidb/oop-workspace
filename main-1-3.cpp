@@ -25,8 +25,8 @@ int main() {
 
 
     
-    int overstayingCount = parkingLot.countOverstayingVehicles(15);
-    std::cout << "Number of vehicles overstaying in the parking lot: " << overstayingCount << std::endl;
+    int overStayingCount = parkingLot.countOverstayingVehicles(15);
+    std::cout << "Number of vehicles overstaying in the parking lot: " << overStayingCount << std::endl;
 
     return 0;
 }

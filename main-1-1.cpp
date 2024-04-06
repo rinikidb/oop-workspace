@@ -20,17 +20,17 @@ int main() {
     vector<Vehicle*> array;
 
     //Creating Car objects 
-    for (int i = 0; i < numCars; ++i) {
+    for (int i = 0; i < numCars; i++) {
         array.push_back(new Car(i + 1));
     }
 
     //Creating Bus objects 
-    for (int i = 0; i < numBuses; ++i) {
+    for (int i = 0; i < numBuses; i++) {
         array.push_back(new Bus(i + 1));
     }
 
     //Creating Motorbike objects 
-    for (int i = 0; i < numMotorbikes; ++i) {
+    for (int i = 0; i < numMotorbikes; i++) {
         array.push_back(new Motorbike(i + 1));
     }
 

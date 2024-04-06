@@ -12,7 +12,7 @@ Vehicle::Vehicle(int ID){
 
 int Vehicle::getID() const {
         return ID;
-    }
+}
 
 time_t Vehicle::getTimeOfEntry() const {
     return timeOfEntry; 

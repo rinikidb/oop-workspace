@@ -18,33 +18,4 @@ public:
   int countOverstayingVehicles(int maxParkingDuration) const;
 };
 
-/*
-#ifndef PARKINGLOT_H
-
-#define PARKINGLOT_H
-
-#include "Vehicle.h"
-
-class ParkingLot {
- public:
-
-    ParkingLot(int capacity);
-    ~ParkingLot();
-
-    int getCount() const;
-
-    void parkVehicle(Vehicle* vehicle);
-    void unparkVehicle(int ID);
-
-    //int countOverstayingVehicles(int maxParkingDuration) const;
-
-private:
-
-    Vehicle** vehicles;
-
-    int capacity;
-    int count;
-};
-*/
-
 #endif
