@@ -1,25 +1,24 @@
 #include <iostream>
-#include "TV.h"
+#include "Fridge.h"
 
 using namespace std;
 
 int main(){
 
-    TV TV(300,56);
-    TV.turnOn();
-    cout << "Power Rating: " << TV.get_powerRating() << endl;
-    cout << "Is On: " << TV.get_isOn() << endl;
-    cout << "Screen Size: " << TV.getScreenSize() << "inches" << endl;
-    cout << "Power Consumption: " << TV.getPowerConsumption() << " kWh/day" << endl;
+    Fridge fridge(300, 400);
+    fridge.turnOn();
+    cout << "Power Rating: " << fridge.get_powerRating() << endl;
+    cout << "Is On: " << fridge.get_isOn() << endl;
+    cout << "Volume: " << fridge.getVolume() << " liters" << endl;
+    cout << "Power Consumption: " << fridge.getPowerConsumption() << " kWh/day" << endl;
 
-    TV.setScreenSize(48);
-    TV.turnOff();
-    TV.set_powerRating(400);
-    cout << "New Power Rating: " << TV.get_powerRating() << endl;
-    cout << "Is On: " << TV.get_isOn() << endl;
-    cout << "New Screen Size: " << TV.getScreenSize() << "inches" << endl;
-    cout << "New Power Consumption: " << TV.getPowerConsumption() << " kWh/day" << endl;
-
+    fridge.turnOff();
+    fridge.set_powerRating(500);
+    fridge.setVolume(400);
+    cout << "New Power Rating: " << fridge.get_powerRating() << endl;
+    cout << "Is On: " << fridge.get_isOn() << endl;
+    cout << "New Volume: " << fridge.getVolume() << " liters" << endl;
+    cout << "New Power Consumption: " << fridge.getPowerConsumption() << " kWh/day" << endl;
 
     return 0;
 }
