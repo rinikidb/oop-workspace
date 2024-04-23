@@ -2,8 +2,8 @@
 #define APPLIANCE_H
 
 class Appliance{
-    private:
-        int powerRating;
+    protected:
+        int powerRating; 
         bool isON;
     
     public:
@@ -14,7 +14,7 @@ class Appliance{
         int get_powerRating() const;
         void set_powerRating(int powerRating);
 
-        bool get_isON();
+        bool get_isOn();
         void turnOff();
         void turnOn();
 

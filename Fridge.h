@@ -12,7 +12,7 @@ class Fridge : public Appliance{
 
         void setVolume(double volume);
 
-        double getVolume();
+        double getVolume()const; 
 
         double getPowerConsumption() override;
 };

@@ -5,13 +5,20 @@ using namespace std;
 
 int main(){
 
-    Fridge Fridge(300,400);
-    cout << "Original Volume: " << Fridge.getVolume() << " litres" << endl;
-    cout << "Original Consumption: " << Fridge.getPowerConsumption() << " kWh/day" << endl;
-    
-    Fridge.setVolume(500);
-    cout << "New Volume: " << Fridge.getVolume() << " litres" << endl;
-    cout << "New Consumption: " << Fridge.getPowerConsumption() << " kWh/day" << endl;
+    Fridge fridge(300, 400);
+    fridge.turnOn();
+    cout << "Power Rating: " << fridge.get_powerRating() << endl;
+    cout << "Is On: " << fridge.get_isOn() << endl;
+    cout << "Volume: " << fridge.getVolume() << " liters" << endl;
+    cout << "Power Consumption: " << fridge.getPowerConsumption() << " kWh/day" << endl;
+
+    fridge.turnOff();
+    fridge.set_powerRating(500);
+    fridge.setVolume(400);
+    cout << "New Power Rating: " << fridge.get_powerRating() << endl;
+    cout << "Is On: " << fridge.get_isOn() << endl;
+    cout << "New Volume: " << fridge.getVolume() << " liters" << endl;
+    cout << "New Power Consumption: " << fridge.getPowerConsumption() << " kWh/day" << endl;
 
     return 0;
 }

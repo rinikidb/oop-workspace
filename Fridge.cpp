@@ -11,10 +11,10 @@ void Fridge::setVolume(double volume){
     this->volume = volume;
 }
 
-double Fridge::getVolume(){
+double Fridge::getVolume()const{ 
     return volume;
 }
 
 double Fridge::getPowerConsumption(){
-    return (get_powerRating() * 24 * (volume/100));     
+    return (powerRating * 24 * (volume/100));     
 }
