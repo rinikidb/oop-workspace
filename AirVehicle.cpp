@@ -7,11 +7,11 @@ AirVehicle::AirVehicle(): w(0), numberOfFlights(0), fuel(100){};
 
 AirVehicle::AirVehicle(int w): w(w), numberOfFlights(0), fuel(100){};
 
-int AirVehicle::get_w()const{
+int AirVehicle::get_weight()const{
     return w;
 }
 
-void AirVehicle::set_w(int w){
+void AirVehicle::set_weight(int w){
     this->w = w;
 }
 

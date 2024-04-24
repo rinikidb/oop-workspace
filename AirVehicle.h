@@ -4,18 +4,17 @@
 class AirVehicle{
     protected:
         int w; //in kgs
-    public:
-
         int numberOfFlights;
         float fuel;//percentage
+    public:
 
         AirVehicle();
 
         AirVehicle(int w);
 
-        int get_w()const;
+        int get_weight()const;
 
-        void set_w(int w);
+        void set_weight(int w);
 
         int get_fuel()const;
 
