@@ -12,7 +12,7 @@ int Helicopter::get_weight(){
     return w;   
 }
 
-char Helicopter::get_name(){
+string Helicopter::get_name(){
     return name;
 }
 void Helicopter::fly(int headwind, int minutes){

@@ -16,7 +16,7 @@ class Helicopter : public AirVehicle{
 
         int get_weight();
 
-        char get_name();
+        string get_name();
 
         void fly(int headwind, int minutes)override;
 
