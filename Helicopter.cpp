@@ -18,7 +18,7 @@ string Helicopter::get_name(){
 void Helicopter::fly(int headwind, int minutes){
     while (fuel > 20){
         if(w > 5670){
-            if(headwind >= 40){
+            if(headwind <= 40){
                 for(int i = 1; i < minutes+1; i++){
                     fuel = fuel - (0.005*fuel);
                 }

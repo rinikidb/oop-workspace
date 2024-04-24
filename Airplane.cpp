@@ -25,7 +25,7 @@ int Airplane::get_numPassengers(){
 
 void Airplane::fly(int headwind, int minutes){
     while(fuel > 20){
-        if(headwind >= 60){
+        if(headwind <= 60){
             for(int i = 1; i < minutes+1; i++){
                 fuel = fuel - (0.005*fuel) - ((0.000001)*numPassengers*fuel);
             }
