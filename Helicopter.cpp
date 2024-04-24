@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Helicopter::Helicopter(): w(0), name("n"){};
+Helicopter::Helicopter(): w(0), name(" "){};
 
 Helicopter::Helicopter(int w, string n): w(w), name(n){};
 
