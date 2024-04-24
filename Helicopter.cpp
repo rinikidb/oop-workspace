@@ -12,6 +12,9 @@ int Helicopter::get_weight(){
     return w;   
 }
 
+void Helicopter::get_name(){
+    cout << name << endl;
+}
 void Helicopter::fly(int headwind, int minutes){
     while (fuel > 20){
         if(w > 5670){

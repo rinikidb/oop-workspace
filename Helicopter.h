@@ -16,6 +16,8 @@ class Helicopter : public AirVehicle{
 
         int get_weight();
 
+        void get_name();
+
         void fly(int headwind, int minutes)override;
 
 };
