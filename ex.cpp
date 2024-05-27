@@ -618,6 +618,11 @@ public:
         nameText.setFillColor(sf::Color::White);
         nameText.setPosition(10, 100);
     }
+    int loadLevel(int level) {
+        int currentLevel = level;
+        return currentLevel;
+        
+    }
 
     void displayScore(int score) {
         scoreText.setString("Score: " + to_string(score));
@@ -628,7 +633,7 @@ public:
     }
 
     void displayLevel(int level) {
-        levelText.setString("Level: " + to_string(level));
+        levelText.setString("Level: " + to_string(loadLevel(level)));
     }
 
     void displayName(const string& name) {
@@ -855,6 +860,7 @@ enum class GameState {
     
 };
 
+/*
 class LevelButton {
 private:
     sf::RectangleShape shape;
@@ -898,7 +904,8 @@ public:
     std::string getText() const {
         return text.getString();  
     }
-}; 
+};
+*/
 
 class LevelSelectionScreen {
 private:
@@ -928,9 +935,9 @@ public:
     } 
 
     void createLevelButtons(sf::Font& font) {
-        sf::Vector2f buttonPosition1(windowSize.x / 2 - 100, windowSize.y / 2 - 80); // Adjust positions as needed
+        sf::Vector2f buttonPosition1(windowSize.x / 2 - 100, windowSize.y / 2 - 90); // Adjust positions as needed
         sf::Vector2f buttonPosition2(windowSize.x / 2 - 100, windowSize.y / 2 - 20); 
-        sf::Vector2f buttonPosition3(windowSize.x / 2 - 100, windowSize.y / 2 + 40);
+        sf::Vector2f buttonPosition3(windowSize.x / 2 - 100, windowSize.y / 2 + 50);
 
         buttons.emplace_back(font, "Level 1", buttonPosition1);
         buttons.emplace_back(font, "Level 2", buttonPosition2);
@@ -1031,6 +1038,7 @@ public:
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Food Slasher!");
     window.setFramerateLimit(60);
+    int selectedLevel;
     sf::Font font;
     if (!font.loadFromFile("font.ttf")) {
         cerr << "Failed to load font!" << endl;
@@ -1039,7 +1047,7 @@ int main() {
 
     StartScreen startScreen(font, { 800, 600 }, "back1.jpg");
     GameState gameState = GameState::StartScreen; 
-    int selectedLevel = 0; 
+    //int selectedLevel = 0; 
     Player player("", sf::Vector2f(375, 500));  // Initialize with an empty name
 
     // Declare GameOverScreen object
@@ -1053,8 +1061,6 @@ int main() {
     AudioManager audioManager;
     UIManager uiManager;
     Slicer slicer({ 400, 550 }, 1000.0f);
-    LevelSelectionScreen levelSelectionScreen({800,600}, "back1.jpg");
-    levelSelectionScreen.createLevelButtons(font);
 
     vector<Food> foodItems;
     vector<Obstacle> obstacles;
@@ -1075,8 +1081,9 @@ int main() {
         window.clear();
 
         if (gameState == GameState::StartScreen) {
-            audioManager.backgroundMusicSound.play();  
+              
             StartScreen startScreen(font, { 800, 600 }, "back1.jpg");
+            audioManager.backgroundMusicSound.play();
             startScreen.handleEvents(event, window);
             startScreen.render(window);
             
@@ -1089,24 +1096,25 @@ int main() {
             }
         } else if (gameState == GameState::NameInput) {
             player.getPlayerName(window, font, startScreen.getWindowSize());
-            audioManager.backgroundMusicSound.play(); 
+            //audioManager.backgroundMusicSound.play(); 
             uiManager.displayName(player.getName());
-            gameState = GameState::Playing;
-            //gameState = GameState::LevelSelection;// Transition to LevelSelection state
+            //gameState = GameState::Playing;
+            gameState = GameState::LevelSelection;// Transition to LevelSelection state
         
-        /*
         } else if (gameState == GameState::LevelSelection) {
+            LevelSelectionScreen levelSelectionScreen({800,600}, "back1.jpg");
+            levelSelectionScreen.createLevelButtons(font);
             // Handle level selection 
             selectedLevel = levelSelectionScreen.handleLevelSelection(window);
             levelSelectionScreen.render(window);
-            //levelSelectionScreen.render(window); 
+            //levelSelectionScreen.render(window);
+            levelManager.loadLevel(selectedLevel);
+            levelManager.updateSpawnInterval();
+            uiManager.displayLevel(selectedLevel);  
             if (selectedLevel > 0) {
                 // Load the selected level 
-                levelManager.loadLevel(selectedLevel);
-                levelManager.updateSpawnInterval();
                 gameState = GameState::Playing;
             }
-        */ 
     
         } else if (gameState == GameState::Playing) {
             // Load the background texture
@@ -1237,7 +1245,7 @@ int main() {
             // Update the UI with the player's current state
             uiManager.displayScore(player.getScore());
             uiManager.displayHealth(player.getHealth());
-            uiManager.displayLevel(1);  // Assuming level 1 for now; update as needed
+            uiManager.displayLevel(selectedLevel);  // Assuming level 1 for now; update as needed
 
             levelManager.render(window);
             slicer.render(window);
@@ -1246,11 +1254,12 @@ int main() {
             // Check if health is zero and transition to Game Over state
             if (!player.isAlive()) {
                     gameState = GameState::GameOver;
-                    /*
+                    
                     audioManager.backgroundMusicSound.stop();
 
                     audioManager.gameOverMusicSound.play();
                     audioManager.gameOverMusicSound.stop();
+                    /*
                     // Declare GameOverScreen object
                     GameOverScreen gameOverScreen(font, { 800, 600 }, player.getScore(), "back1.jpg");
                     gameOverScreen.handleEvents(event, window);

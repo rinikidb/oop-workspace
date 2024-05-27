@@ -41,10 +41,10 @@ Player::Player(string playerName, sf::Vector2f pos) : name(playerName), score(0)
     }
 
 
-    void Player::getPlayerName(sf::RenderWindow& window, sf::Font& font, sf::Vector2f windowSize, const std::string& backgroundFilename) {
+    void Player::getPlayerName(sf::RenderWindow& window, sf::Font& font, sf::Vector2f windowSize) {
 
-        // Load the background texture  
-        if (!backgroundTexture.loadFromFile(backgroundFilename)) {
+        // Load the background texture   
+        if (!backgroundTexture.loadFromFile("back1.jpg")) {
             cerr << "Failed to load background image!" << endl;
         }
         backgroundSprite.setTexture(backgroundTexture);

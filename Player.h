@@ -38,6 +38,6 @@ public:
         
 
     sf::FloatRect getBounds() const;
-    void getPlayerName(sf::RenderWindow& window, sf::Font& font, sf::Vector2f windowSize, const std::string& backgroundFilename);
+    void getPlayerName(sf::RenderWindow& window, sf::Font& font, sf::Vector2f windowSize);
 };
 #endif // PLAYER_H

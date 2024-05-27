@@ -87,8 +87,8 @@ int main() {
                 window.close();
                 return 0;
             } 
-        } else if (gameState == GameState::NameInput) {
-            player.getPlayerName(window, font, startScreen.getWindowSize(), "back1.jpg");  
+        } else if (gameState == GameState::NameInput) {  
+            player.getPlayerName(window, font, startScreen.getWindowSize());  
             //audioManager.backgroundMusicSound.play(); 
             uiManager.displayName(player.getName());
 
