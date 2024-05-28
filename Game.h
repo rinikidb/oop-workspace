@@ -67,7 +67,6 @@ class Game{
 
                 
                 if (std::none_of(entities.begin(), entities.end(), [](GameEntity* entity) { return entity->getType() == 'S'; })) {
-                    std::cout << "All ships are destroyed. Game over.\n";
                     return;
                 }
                         
