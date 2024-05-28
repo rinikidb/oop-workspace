@@ -5,10 +5,10 @@ int main() {
     Game game;
     game.initGame(3, 3, 10, 10);
     
-    std::vector<GameEntity*> entities = game.get_entities();
+    std::vector<GameEntity*> entities = game.get_entities(); 
     std::cout << "Initial game state:\n";
     for (auto entity : entities) {
-        std::cout << "Entity type: " << entity->get_type() << " at position: (" 
+        std::cout << "Entity type: " << entity->getType() << " at position: (" 
                   << std::get<0>(entity->getPos()) << ", " << std::get<1>(entity->getPos()) << ")\n";
     }
 

@@ -16,7 +16,7 @@ int main() {
 
     explosion.apply(ship);
     std::cout << "Ship position after explosion: (" << std::get<0>(ship.getPos()) << ", " << std::get<1>(ship.getPos()) << ")\n";
-    std::cout << "Ship type after explosion: " << ship.get_type() << "\n";
+    std::cout << "Ship type after explosion: " << ship.getType() << "\n";
 
     return 0;
 }

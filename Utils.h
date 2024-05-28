@@ -22,7 +22,7 @@ class Utils{
             int x2 = get<0>(pos2);
             int y2 = get<1>(pos2);
 
-            double dist = sqrt(pow(2,(x1-x2)) + pow(2,(y1-y1)));
+            double dist = sqrt(pow((x1-x2),2) + pow((y1-y2),2));
 
             return dist;
         }

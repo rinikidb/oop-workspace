@@ -43,17 +43,17 @@ class Game{
         void gameLoop(int maxIterations, double mineDistanceThreshold){
             for(int i = 0; i < maxIterations; i++){
                 for(auto a:entities){
-                    if (a->get_type() == 'S'){
+                    if (a->getType() == 'S'){
                         Ship* ship = static_cast<Ship*>(a);
                         ship->move(1, 0); 
                     }
                 }
 
                 for(auto entity:entities){
-                    if (entity->get_type() == 'S'){
+                    if (entity->getType() == 'S'){
                         Ship* ship = static_cast<Ship*>(entity);
                         for(auto entity:entities){
-                            if(entity->get_type() == 'M'){
+                            if(entity->getType() == 'M'){
                                 Mine* mine = static_cast<Mine*>(entity);
                                 double dist = Utils::calculateDistance(mine->getPos(), ship->getPos());
                                 if(dist <= mineDistanceThreshold){
@@ -66,7 +66,7 @@ class Game{
                 }
 
                 
-                if (std::none_of(entities.begin(), entities.end(), [](GameEntity* entity) { return entity->get_type() == 'S'; })) {
+                if (std::none_of(entities.begin(), entities.end(), [](GameEntity* entity) { return entity->getType() == 'S'; })) {
                     std::cout << "All ships are destroyed. Game over.\n";
                     return;
                 }

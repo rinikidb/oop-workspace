@@ -19,7 +19,7 @@ class GameEntity{
         tuple<int, int> getPos(){
             return position;
         }
-        char get_type(){
+        char getType(){
             return type;
         }
         void set_type(char type){
