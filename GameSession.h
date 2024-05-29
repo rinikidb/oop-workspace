@@ -59,9 +59,6 @@ class GameSession{
                                     cout << "Avatar has won the game!" << endl;
                                     break;
                                 }
-                                else{
-                                    continue;
-                                }
                             }
                         }
                     }
