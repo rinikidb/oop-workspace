@@ -57,6 +57,7 @@ class GameSession{
 
                                 if(dist <= obstacleActivationDistance){
                                     cout << "Avatar has won the game!" << endl;
+                                    break;
                                 }
                             }
                         }
