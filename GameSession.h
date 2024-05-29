@@ -56,12 +56,11 @@ class GameSession{
                                 if(dist <= obstacleActivationDistance){
                                     obstacle->apply(*avatar); 
                                 }
-
-                                if(get<0>(avatar->getCoordinates()) > gridWidth){
-                                    cout << "Avatar has won the game!" << endl;
-                                    break;
-                                }
                             }
+                        }
+                        if(get<0>(avatar->getCoordinates()) > gridWidth){
+                            cout << "Avatar has won the game!" << endl;
+                            break;
                         }
                     }
                 }
