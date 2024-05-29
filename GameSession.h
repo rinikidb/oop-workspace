@@ -46,10 +46,6 @@ class GameSession{
                     if(obj->getEntity() == 'A'){
                         Avatar* avatar = static_cast<Avatar*>(obj);
                         tuple<int,int> pos1 = avatar->getCoordinates();
-                        if(get<0>(avatar->getCoordinates()) > gridWidth){
-                                    cout << "Avatar has won the game!" << endl;
-                                    break;
-                        }
                         for(auto obj:grid){
                             if(obj->getEntity() == 'O'){
                                 Obstacle* obstacle = static_cast<Obstacle*>(obj);
@@ -63,9 +59,13 @@ class GameSession{
 
                             }
                         }
-                        
+                        if(get<0>(avatar->getCoordinates()) > gridWidth){
+                                    cout << "Avatar has won the game!" << endl;
+                                    break;
+                        }
                         
                     }
+                    
                 }
                 
             }
