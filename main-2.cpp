@@ -21,6 +21,7 @@ int main(){
     cout << "New Avatar Coordinates: (" << get<0>(obstacle.getCoordinates()) << "," << get<1>(obstacle.getCoordinates()) << ")" << endl;
 
     obstacle.apply(avatar); 
+    cout << "New entity: " << avatar.getEntity() << endl;
 
 
 }
