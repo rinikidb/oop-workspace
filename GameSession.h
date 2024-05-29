@@ -66,9 +66,13 @@ class GameSession{
                         }
                     }
                 }
+                if(i == maxCycles){
+                    cout << "Maximum number of cycles reached. Game over." << endl;
+                }
 
             }
-            cout << "Maximum number of cycles reached. Game over." << endl; 
+
+             
         }
 };
 
