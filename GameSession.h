@@ -59,13 +59,16 @@ class GameSession{
                                     cout << "Avatar has won the game!" << endl;
                                     break;
                                 }
+                                else{
+                                    continue;
+                                }
                             }
                         }
                     }
                 }
 
             }
-            cout << "Maximum number of cycles reached. Game over" << endl;
+            cout << "Maximum number of cycles reached. Game over." << endl; 
         }
 };
 
