@@ -7,12 +7,14 @@
 #include "Helper.h"
 #include "Avatar.h"
 #include "Obstacle.h"
+#include <algorithm> 
 
 using namespace std;
 
 class GameSession{
     private:
         std::vector<GridUnit*> grid;
+        int gridWidth; 
     public: 
         std::vector<GridUnit*>& getGrid(){
             return grid;
@@ -29,7 +31,7 @@ class GameSession{
                 Obstacle* obstacle = new Obstacle(get<0>(pos),get<1>(pos));
                 grid.push_back(obstacle);
             }
-
+            this->gridWidth = gridWidth;
         }
         void gameCycle(int maxCycles, double obstacleActivationDistance){
             for(int i = 0; i < maxCycles; i++){
@@ -55,7 +57,7 @@ class GameSession{
                                     obstacle->apply(*avatar); 
                                 }
 
-                                if(dist <= obstacleActivationDistance){
+                                if(get<0>(avatar->getCoordinates()) > gridWidth){
                                     cout << "Avatar has won the game!" << endl;
                                     break;
                                 }
