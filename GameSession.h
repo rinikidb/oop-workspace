@@ -65,9 +65,9 @@ class GameSession{
                         }
                     }
                 }
-
+                cout << "Maximum number of cycles reached. Game over." << endl;
             }
-            cout << "Maximum number of cycles reached. Game over." << endl;
+            
   
         }
 };
