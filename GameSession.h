@@ -40,6 +40,10 @@ class GameSession{
                         Avatar* avatar = static_cast<Avatar*>(obj);
                         avatar->shift(1,0);
                     }
+                    if(get<0>(avatar->getCoordinates()) > gridWidth){
+                            cout << "Avatar has won the game!" << endl;
+                            break;
+                    }
                 }
 
                 for(auto obj:grid){
@@ -58,10 +62,7 @@ class GameSession{
                                 }
                             }
                         }
-                        if(get<0>(avatar->getCoordinates()) > gridWidth){
-                            cout << "Avatar has won the game!" << endl;
-                            break;
-                        }
+                        
                     }
                 }
                 if (i == maxCycles){
