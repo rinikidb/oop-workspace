@@ -13,13 +13,14 @@ int main(){
     cout << "Coordinates: (" << get<0>(obstacle.getCoordinates()) << "," << get<1>(obstacle.getCoordinates()) << ")" << endl;
     cout << "Type: " << obstacle.getEntity() << endl;
 
-    obstacle.apply(gridUnit);
+    
 
     Avatar avatar(1,2);
     cout << "Initial Avatar Coordinates: (" << get<0>(obstacle.getCoordinates()) << "," << get<1>(obstacle.getCoordinates()) << ")" << endl;
     avatar.shift(3,3);
     cout << "New Avatar Coordinates: (" << get<0>(obstacle.getCoordinates()) << "," << get<1>(obstacle.getCoordinates()) << ")" << endl;
 
+    obstacle.apply(avatar); 
 
 
 }
